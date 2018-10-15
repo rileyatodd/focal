@@ -1,7 +1,7 @@
 {
   "name": "@grammarly/focal",
   "version": "0.7.0",
-  "description": "Lensable Atoms using rxjs",
+  "description": "@grammarly's rxjs LensedAtom implementation without the react dependency",
   "main": "dist/src/index.js",
   "typings": "dist/src/index.d.ts",
   "files": [
@@ -11,11 +11,8 @@
     "docs": "rm -rf ./docs && typedoc --out docs --theme minimal --ignoreCompilerErrors --tsconfig tsconfig.json",
     "clean": "rm -rf ./dist",
     "build": "npm run clean && tsc && npm run lint",
-    "test": "npm run test:unit && npm run test:examples && npm run test:todomvc && npm run test:manual",
-    "test:manual": "cd test/manual && npm i && npm run build",
+    "test": "npm run test:unit",
     "test:unit": "npm run build && tape ./dist/test/**/*.js | tap-spec",
-    "test:examples": "cd examples/all && npm i && npm run build",
-    "test:todomvc": "cd examples/todomvc && npm i && npm run build",
     "test:watch": "watch 'npm test' src test",
     "lint": "tslint --type-check --project tsconfig.json -c tslint.json",
     "preversion": "if ! [[ $(git rev-parse --abbrev-ref HEAD) == \"master\" ]]; then echo \"Not on the master branch.\" && exit 1; fi",
