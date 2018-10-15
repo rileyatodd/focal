@@ -1,8 +1,5 @@
-import * as React from 'react'
 import { equals as structEq } from './equals'
 export { equals as structEq } from './equals'
-
-export const DEV_ENV = typeof process !== 'undefined' && process.env.NODE_ENV !== 'production'
 
 export function setKey<T, K extends keyof T>(k: K, v: T[K], o: T): T {
   if (k in o && structEq(v, o[k])) {
@@ -48,22 +45,6 @@ export function warning(message: string) {
   // Throw a dummy error so it's possible to enter debugger with
   // 'break on all exceptions'.
   try { throw new Error(message) } catch (_) { /* no-op */ }
-}
-
-export function getReactComponentName(
-  component: string
-    | React.ComponentClass<any>
-    | React.StatelessComponent<any>
-    | React.Component<any, any>
-) {
-  return typeof component === 'string' ? component
-    : (component as React.ComponentClass<any>).displayName !== undefined
-      ? (component as React.ComponentClass<any>).displayName
-    : (component as React.StatelessComponent<any>).name !== undefined
-      ? (component as React.StatelessComponent<any>).name
-    : component.constructor && component.constructor.name !== undefined
-      ? component.constructor.name
-    : undefined
 }
 
 export type Option<T> = T | undefined

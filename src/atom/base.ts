@@ -1,7 +1,7 @@
 import { Lens, Prism, PropExpr } from './../lens'
 import { structEq, Option } from './../utils'
 
-import { Observable } from 'rxjs/Observable'
+import { Observable } from 'rxjs'
 import { Subscriber } from 'rxjs/Subscriber'
 import { Subscription } from 'rxjs/Subscription'
 import { BehaviorSubject } from 'rxjs/BehaviorSubject'
