@@ -1,5 +1,5 @@
 {
-  "name": "@grammarly/focal",
+  "name": "focal-sans-react",
   "version": "0.7.0",
   "description": "@grammarly's rxjs LensedAtom implementation without the react dependency",
   "main": "dist/src/index.js",
